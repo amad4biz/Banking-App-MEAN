@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <title>John Cena</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="medium-6 columns medium-centered">
+    <div class="panel center">
+
+
+      <h1><span class="fa fa-sign-in"></span> Signup</h1>
+
+      <% if (message.length > 0) { %>
+        <div class="alert alert-info"><%= message %></div>
+        <% } %>
+
+        <!-- LOGIN FORM -->
+        <form action="/signup" method="post">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" name="fullName">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password">
+          </div>
+
+          <button type="submit" class="btn btn-info btn-lg">Create Account</button>
+        </form>
+
+        <hr>
+
+        <p>Already have an account? <a href="/login">Login</a></p>
+        <p>Or go <a href="/">home</a>.</p>
+
+
+      </div>
+    </div>
+  </body>
+  </html>

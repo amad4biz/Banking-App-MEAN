@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+  <title>John Cena</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+  <div class="row">
+    <div class="large-12 columns large-centered" id=mainHeader>
+  <a href="/logout" class="logout radius button right">Logout</a>
+      <h1 class=mainHeader>Q&A Banking </h1>
+      <hr/>
+    </div>
+  </div>
+  <div class="panel">
+
+    <div class="page-header text-center">
+      <h2> Balance: $<%= user.local.balance %></h2>
+      <!-- <a href="/logout" class="btn btn-default btn-sm">Logout</a> -->
+    </div>
+
+    <div class="row" >
+
+      <!-- LOCAL INFORMATION -->
+      <div class="medium-6 columns">
+        <div class="panel">
+          <h3><span class="fa fa-user"></span><%= user.local.fullName %></h3>
+
+          <!-- <% if (user.local.email) { %> -->
+          <p>
+            <strong>Account Number</strong>: <%= user._id %><br>
+            <strong>Email</strong>: <%= user.local.email %><br>
+          </p>
+
+          <!-- <a href="/unlink/local" class="btn btn-default">Close Account</a>
+          <% } else { %>
+          <a href="/connect/local" class="btn btn-default">Connect Local</a>
+          <% } %> -->
+
+        </div>
+        <div class="panel postTransactions">
+          <h3 align=center>Post Transactions</h3>
+          <form action="/transactions" method="post">
+            <p align=center>Please ld imit description and dollar value to 20 characters .</p>
+            <input name=dollars type="number" maxlength="20" placeholder="$"/>
+            <input name=description type="text"  maxlength="20" placeholder="Transaction Description">
+            <button class="button small right info" type="submit">Add Transaction</button><br><br>
+          </form>
+        </div>
+      </div>
+      <div class="medium-6 columns panel">
+        <h3 align='center'>Transaction History</h3>
+
+        <h4>
+          <!-- <%%> -->
+          <div class="columns medium-6">
+
+            <ol>
+              <% for(var i=0; i< user.local.transactions.length; i++) { %>
+                <!-- <span><%=user.local.transactions[i].date%> </span> -->
+                <% if(user.local.transactions[i].amount >= 0) { %>
+                <li class=blue>
+                <% } else{%>
+                <li class=red>
+                <% } %>
+                $ <%= user.local.transactions[i].amount%>
+              </li>
+              <% } %>
+            </ol>
+          </div>
+          <div class="columns medium-6">
+
+            <ul class=description>
+              <% for(var i=0; i< user.local.transactions.length; i++) { %>
+                <li>
+                  <%= user.local.transactions[i].description%>
+                </li>
+                <% } %>
+              </ul>
+            </div>
+          </div>
+
+        </h4>
+
+
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+</div>
+</body>
+</html>

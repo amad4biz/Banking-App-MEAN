@@ -1,0 +1,32 @@
+body{
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #f2f2f2;
+}
+
+.mainHeader{
+  color: #f2f2f2;
+
+}
+
+li.blue {
+  color: blue;
+  font-size: 20px
+}
+
+li.red {
+  color: red;
+  font-size: 20px
+}
+
+.description {
+  font-size: 20px
+}
+
+.button{
+  background-color: #f2f2f2;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.fa-money {
+  color: rgb(104, 140, 64);
+}

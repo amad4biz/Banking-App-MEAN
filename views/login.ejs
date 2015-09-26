@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+  <title>John Cena</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/styles/style.css"><!-- <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha256-IF1P9CSIVOaY4nBb5jATvBGnxMn/4dB9JNTLqdxKN9w= sha512-UsfHxnPESse3RgYeaoQ7X2yXYSY5f6sB6UT48+F2GhNLqjbPhtwV2WCUQ3eQxeghkbl9PioaTOHNA+T0wNki2w==" crossorigin="anonymous"> -->
+</head>
+<body>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="medium-6 columns medium-centered">
+    <div class="panel center">
+
+      <h1><span class="fa fa-sign-in"></span> Login</h1>
+
+      <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+
+        <form action="/login" method="post">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password" requiered>
+          </div>
+
+          <button type="submit" class="btn btn-info btn-lg">Login</button>
+        </form>
+
+        <hr>
+
+        <p>Need an account? <a href="/signup">Signup</a></p>
+        <p>Go hard.</p>
+        <p>... or go <a href="/">home</a>.</p>
+
+
+
+      </div>
+    </div>
+  </body>
+  </html>
